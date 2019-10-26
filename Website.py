@@ -15,5 +15,8 @@ soup = BeautifulSoup(page.content, 'html.parser')
 print(soup.prettify())
 
 title = soup.find(id= "productTitle").get_text()
+price = soup.find(id="priceblock_dealprice").get_text()
+converted_price = float(price[0:10])
 
-print( title)
+print(converted_price)
+print(title.strip())
