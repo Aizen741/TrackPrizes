@@ -12,15 +12,8 @@ headers = {
 page = requests.get(URL, headers = headers)
 
 soup = BeautifulSoup(page.content, 'html.parser')
-
-
 print(soup.prettify())
 
-title = soup.find(id= "productTitle")
-price = soup.find(id="priceblock_dealprice")
+title = soup.find(id= "productTitle").get_text()
 
-converted_price =float(price[0:5])
-
-
-print(converted_price)
-print(title.strip())
+print( title)
